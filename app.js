@@ -97,7 +97,9 @@ const mantras = [
   'Übe, bessere Fragen zu stellen. Sie machen neue Antworten überhaupt erst sichtbar.',
   'Beginne mit den Mitteln, die du hast. Der nächste Schritt muss nicht die ganze Reise bezahlen.',
   'Dein unverwechselbarer Weg kann aus einer ungewöhnlichen Mischung deiner Interessen entstehen.',
-  'Mach etwas Nützliches für eine kleine Gruppe, bevor du versuchst, allen zu gefallen.'
+  'Mach etwas Nützliches für eine kleine Gruppe, bevor du versuchst, allen zu gefallen.',
+  'Was du täglich tust, prägt dich stärker als das, was du gelegentlich vorhast.',
+  'Macht aus euren Werten klare Familienregeln. Schreibt sie auf, damit ihr euch gemeinsam daran orientieren könnt.'
 ];
 
 const today = new Date();
@@ -119,7 +121,9 @@ const contextText = document.querySelector('#mantra-context');
 const bookQuote = document.querySelector('#book-quote');
 
 const contextGuides = [
-  { test: /pause|pausen|ruhe|erholung/i, theme: 'Erholung ist Teil des Weges', text: 'Kellys Rat erinnert daran, dass Pausen die Kraft für langfristiges Lernen und Schaffen erhalten. Erholung gehört zur Arbeit am eigenen Leben dazu.', quote: true },
+  { test: /pause|pausen|ruhe|erholung/i, theme: 'Erholung ist Teil des Weges', text: 'Kellys Rat erinnert daran, dass Pausen die Kraft für langfristiges Lernen und Schaffen erhalten. Erholung gehört zur Arbeit am eigenen Leben dazu.', quote: { text: 'Taking a break is not a sign of weakness but a sign of strength.', source: 'https://kk.org/cooltools/excellent-advice-chatpdf-2-minute-burnout-checkup/' } },
+  { test: /familienregel|familie|familien|regel|regeln|werte/i, theme: 'Gemeinsame Regeln geben Halt', text: 'Kelly betont, dass klare Familienregeln Kindern Zugehörigkeit und Orientierung geben. Aufgeschrieben werden sie greifbar: Alle können sich darauf beziehen und gemeinsam prüfen, was ihnen wichtig ist.', quote: { text: 'Children totally accept—and crave—family rules.', source: 'https://kk.org/thetechnium/99-additional-bits-of-unsolicited-advice/' } },
+  { test: /täglich|jeden tag|kleine dinge|beständigkeit|regelmäßig|wiederhol/i, theme: 'Kleine Schritte, oft wiederholt', text: 'Kelly hebt Beständigkeit bei Arbeit, Bewegung und Beziehungen hervor. Kleine Handlungen, die du wiederholst, prägen deinen Alltag stärker als seltene Kraftakte. Wähle heute einen Schritt, den du morgen wiederholen kannst.', quote: { text: 'Nothing beats small things done every day.', source: 'https://kk.org/books/excellent-advice-for-living' } },
   { test: /werkzeug|werkzeuge|technik|technologie|mittel/i, theme: 'Werkzeuge erweitern Möglichkeiten', text: 'Kelly schaut auf Werkzeuge als Mittel, mit denen Menschen mehr wahrnehmen und gestalten können. Entscheidend bleibt, wofür du diese zusätzliche Fähigkeit einsetzt.' },
   { test: /gruppe|menschen|beziehung|gespräch|helfen|hilfe|andere|teilen|beitrag|großzügig|person|freunde/i, theme: 'Wert entsteht miteinander', text: 'Ein wiederkehrender Gedanke bei Kelly ist die Kraft großzügiger Beziehungen. Nützlichkeit, Vertrauen und Austausch können mehr tragen als ein Vorhaben, das nur auf Reichweite zielt.' },
   { test: /unverwechselbar|eigene interessen|eigenen interessen|eigenständ|talente|dein weg|nur du/i, theme: 'Den eigenen Weg formen', text: 'Kelly ermutigt dazu, nicht bloß in einer bestehenden Kategorie um den ersten Platz zu kämpfen. Deine besondere Mischung aus Erfahrung, Interessen und Können kann einen eigenen Weg eröffnen.' },
@@ -160,6 +164,10 @@ function renderMantra() {
   contextText.textContent = guide.text;
   document.querySelector('#context-heading').textContent = guide.theme;
   bookQuote.hidden = !guide.quote;
+  if (guide.quote) {
+    bookQuote.querySelector('blockquote').textContent = `“${guide.quote.text}”`;
+    bookQuote.querySelector('figcaption a').href = guide.quote.source;
+  }
   document.querySelector('#day-number').textContent = currentIndex === todaysIndex ? 'HEUTIGER IMPULS' : `IMPULS ${String(currentIndex + 1).padStart(2, '0')}`;
   const saved = favorites.includes(text);
   saveButton.setAttribute('aria-pressed', String(saved));
