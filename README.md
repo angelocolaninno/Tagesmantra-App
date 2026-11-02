@@ -1,6 +1,6 @@
 # Heute — Tagesmantra
 
-Eine persönliche, deutschsprachige Tagesmantra-Webapp für das iPhone. Sie zeigt jeden Kalendertag denselben Impuls, funktioniert offline und kann zum Home-Bildschirm hinzugefügt werden. Favoriten bleiben lokal auf dem Gerät.
+Eine persönliche, deutschsprachige Tagesmantra-Webapp für das iPhone mit 99 eigenen Impulsen. Sie zeigt jeden Kalendertag denselben Gedanken, funktioniert offline und kann zum Home-Bildschirm hinzugefügt werden. Favoriten bleiben lokal auf dem Gerät.
 
 ## Lokal starten
 
@@ -18,7 +18,7 @@ python3 -m http.server 8000
 
 ## Inhalte
 
-Die Tagesimpulse sind eigenständige deutsche Formulierungen, die sich an Themen aus Kevin Kellys *Excellent Advice for Living* orientieren. Sie sind keine Buchzitate. [Kevin Kelly: Excellent Advice for Living](https://kk.org/books/excellent-advice-for-living) · [Buchseite beim Verlag](https://www.penguinrandomhouse.com/books/725357/excellent-advice-for-living-by-kevin-kelly/).
+Alle Tagesimpulse sind eigenständige deutsche Formulierungen nach Motiven aus Kevin Kellys *Excellent Advice for Living* und seinen öffentlich beschriebenen Ideen: Neugier, praktische Experimente, langfristiges Denken, eigenes Schaffen, hilfreiche Werkzeuge und enge Beziehungen. Es sind keine Buchzitate. [Kevin Kelly: Excellent Advice for Living](https://kk.org/books/excellent-advice-for-living) · [Buchseite beim Verlag](https://www.penguinrandomhouse.com/books/725357/excellent-advice-for-living-by-kevin-kelly/).
 
 ## Technik
 
