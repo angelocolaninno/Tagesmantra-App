@@ -29,7 +29,7 @@ button { color: inherit; font: inherit; }
 .brand { display: inline-flex; align-items: center; gap: 9px; color: var(--ink); text-decoration: none; font-size: 10px; letter-spacing: .19em; font-weight: 700; }
 .brand-mark { width: 34px; height: 34px; display: grid; place-items: center; border-radius: 50%; background: linear-gradient(145deg, #426d58, #264a37); color: white; font: 600 19px 'Playfair Display', Georgia, serif; letter-spacing: 0; box-shadow: inset 0 1px 1px #ffffff63, 0 2px 5px #19372930; }
 .icon-button { height: 42px; padding: 0 13px; border: 1px solid #ffffffb8; border-radius: 999px; background: #ffffff75; box-shadow: inset 0 1px 0 #fff, 0 2px 6px #26352d0d; -webkit-backdrop-filter: blur(18px) saturate(180%); backdrop-filter: blur(18px) saturate(180%); display: flex; align-items: center; gap: 7px; cursor: pointer; transition: transform .18s ease, background .18s ease; }
-.icon-button:active, .primary-button:active, .save-button:active { transform: scale(.97); }
+.icon-button:active, .primary-button:active, .save-button:active, .flip-button:active { transform: scale(.97); }
 .icon-button svg, .save-button svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linejoin: round; }
 .favorite-count { color: var(--muted); font-size: 12px; }
 
@@ -40,7 +40,12 @@ h1 span { color: var(--green); }
 .intro-note { margin: 13px 0 0; color: var(--muted); font-size: 13px; }
 
 /* The mantra stays a calm, legible content surface beneath the glass controls. */
-.mantra-card { position: relative; overflow: hidden; min-height: 330px; border: 1px solid #ffffff38; border-radius: 29px; padding: 23px 23px 18px; background: radial-gradient(ellipse at 100% 0%, #5e806b 0, transparent 36%), linear-gradient(145deg, #345d47 0%, #254b38 62%, #203f32 100%); color: #fffdf5; display: flex; flex-direction: column; box-shadow: 0 22px 48px #263f3429, inset 0 1px 0 #ffffff45; }
+.flip-card { min-height: 355px; perspective: 1400px; -webkit-perspective: 1400px; }
+.flip-card-inner { position: relative; min-height: inherit; display: grid; transform-style: preserve-3d; -webkit-transform-style: preserve-3d; transition: transform .72s cubic-bezier(.2,.75,.24,1); }
+.flip-card-inner.is-flipped { transform: rotateY(180deg); }
+.mantra-face { grid-area: 1 / 1; width: 100%; min-height: 355px; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.mantra-card { position: relative; overflow: hidden; min-height: 355px; border: 1px solid #ffffff38; border-radius: 29px; padding: 23px 23px 18px; background: radial-gradient(ellipse at 100% 0%, #5e806b 0, transparent 36%), linear-gradient(145deg, #345d47 0%, #254b38 62%, #203f32 100%); color: #fffdf5; display: flex; flex-direction: column; box-shadow: 0 22px 48px #263f3429, inset 0 1px 0 #ffffff45; }
+.mantra-back { transform: rotateY(180deg); background: radial-gradient(ellipse at 0% 100%, #4e715c 0, transparent 38%), linear-gradient(145deg, #2d5540, #203f32); }
 .mantra-card::before { position: absolute; top: -75px; right: -42px; width: 190px; height: 190px; border: 1px solid #ffffff14; border-radius: 50%; content: ''; box-shadow: 0 0 0 24px #ffffff08, 0 0 0 48px #ffffff06; pointer-events: none; }
 .card-topline, .card-bottomline { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; }
 .day-chip { min-height: 28px; padding: 0 10px; border: 1px solid #ffffff25; border-radius: 999px; background: #ffffff12; color: #e7e7d6; display: inline-flex; align-items: center; gap: 8px; font-size: 9px; letter-spacing: .13em; }
@@ -49,9 +54,19 @@ h1 span { color: var(--green); }
 .mantra-text { position: relative; z-index: 1; max-width: 400px; margin: auto 0; padding: 30px 0; font: 500 clamp(27px, 7vw, 35px)/1.27 'Playfair Display', Georgia, serif; letter-spacing: -.025em; text-wrap: pretty; }
 .card-bottomline { padding-top: 15px; border-top: 1px solid #ffffff2b; }
 .mantra-caption { color: #d4ddd2; font-size: 9px; letter-spacing: .14em; }
+.card-controls { display: inline-flex; align-items: center; gap: 7px; }
 .save-button { min-height: 36px; padding: 0 12px; border: 1px solid #ffffff38; border-radius: 999px; background: #ffffff13; color: #fffdf5; display: inline-flex; align-items: center; gap: 6px; cursor: pointer; font-size: 11px; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); transition: transform .18s ease, background .18s ease; }
 .save-button[aria-pressed="true"] { background: #ffffff25; }
 .save-button[aria-pressed="true"] svg { fill: #f0c77f; stroke: #f0c77f; }
+.flip-button { min-height: 36px; padding: 0 11px; border: 1px solid #ffffff50; border-radius: 999px; background: #ffffff20; color: #fffdf5; display: inline-flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer; font-size: 11px; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); transition: transform .18s ease, background .18s ease; }
+.flip-button svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.context-copy { position: relative; z-index: 1; margin: auto 0; padding: 20px 0; }
+.context-copy h2 { margin: 0 0 12px; color: #f4d59e; font: 500 23px/1.2 'Playfair Display', Georgia, serif; }
+.mantra-context { max-width: 400px; margin: 0; color: #f5f3ea; font: 400 15px/1.55 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; }
+.book-quote { margin: 15px 0 0; padding: 11px 0 0 13px; border-top: 1px solid #ffffff2a; border-left: 2px solid #e8c27f; }
+.book-quote blockquote { margin: 0; color: #fffdf5; font: 500 14px/1.4 'Playfair Display', Georgia, serif; }
+.book-quote figcaption { margin-top: 7px; color: #d4ddd2; font-size: 10px; line-height: 1.5; }
+.book-quote a { color: #f1d49e; text-underline-offset: 2px; }
 
 .actions { padding: 18px 0 8px; display: grid; gap: 8px; }
 .primary-button { width: 100%; min-height: 56px; padding: 0 19px; border: 1px solid #ffffffd4; border-radius: 20px; background: linear-gradient(135deg, #ffffffb8, #ffffff67); color: #263b30; box-shadow: 0 8px 22px #3e53521c, inset 0 1px 0 #fff; -webkit-backdrop-filter: blur(22px) saturate(185%); backdrop-filter: blur(22px) saturate(185%); display: flex; align-items: center; justify-content: space-between; cursor: pointer; font-size: 13px; font-weight: 600; transition: transform .18s ease, background .18s ease; }
@@ -73,7 +88,7 @@ h2 { margin: 0; font: 500 28px 'Playfair Display', Georgia, serif; }
 .toast { position: fixed; z-index: 5; left: 50%; bottom: max(24px, env(safe-area-inset-bottom)); transform: translate(-50%, 16px); opacity: 0; pointer-events: none; padding: 12px 18px; border: 1px solid #ffffffbd; border-radius: 999px; background: #f7faf5db; color: #26352d; box-shadow: 0 8px 28px #26352d20; -webkit-backdrop-filter: blur(20px) saturate(180%); backdrop-filter: blur(20px) saturate(180%); font-size: 12px; transition: .22s ease; white-space: nowrap; }
 .toast.is-visible { opacity: 1; transform: translate(-50%, 0); }
 [hidden] { display: none !important; }
-@media (min-height: 800px) { .mantra-card { min-height: 360px; } }
+@media (min-height: 800px) { .flip-card, .mantra-face, .mantra-card { min-height: 370px; } }
 @media (prefers-color-scheme: dark) {
   :root { --paper: #111816; --ink: #eff5ef; --muted: #a2afa8; --green: #a9d4b8; --line: #35443d; --glass: rgba(34, 44, 40, .64); --glass-edge: rgba(255, 255, 255, .2); }
   body { background: radial-gradient(ellipse at 14% 8%, #294940 0, transparent 34%), radial-gradient(ellipse at 94% 34%, #393347 0, transparent 30%), linear-gradient(145deg, #17211e, #101715 70%, #18231f); }
