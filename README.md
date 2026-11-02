@@ -1,6 +1,6 @@
 # Heute — Tagesmantra
 
-Eine persönliche, deutschsprachige Tagesmantra-Webapp für das iPhone mit 99 eigenen Impulsen. Sie zeigt jeden Kalendertag denselben Gedanken, funktioniert offline und kann zum Home-Bildschirm hinzugefügt werden. Favoriten bleiben lokal auf dem Gerät.
+Eine persönliche, deutschsprachige Tagesmantra-Webapp für das iPhone mit 99 eigenen Impulsen. Die Vorderseite zeigt den kurzen Gedanken; durch Antippen oder über „Mehr“ drehst du die Karte um und bekommst Kontext dazu. Ein kurzer, attribuierter Buchausschnitt ergänzt den passenden Impuls. Die App funktioniert offline und kann zum Home-Bildschirm hinzugefügt werden. Favoriten bleiben lokal auf dem Gerät.
 
 ## Lokal starten
 
