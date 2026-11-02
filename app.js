@@ -112,6 +112,41 @@ const saveButton = document.querySelector('#save-button');
 const saveLabel = document.querySelector('#save-label');
 const favoriteCount = document.querySelector('#favorite-count');
 const favoritesPanel = document.querySelector('#favorites-panel');
+const flipCardInner = document.querySelector('#flip-card-inner');
+const mantraFront = document.querySelector('#mantra-front');
+const mantraBack = document.querySelector('#mantra-back');
+const contextText = document.querySelector('#mantra-context');
+const bookQuote = document.querySelector('#book-quote');
+
+const contextGuides = [
+  { test: /pause|pausen|ruhe|erholung/i, theme: 'Erholung ist Teil des Weges', text: 'Kellys Rat erinnert daran, dass Pausen die Kraft für langfristiges Lernen und Schaffen erhalten. Erholung gehört zur Arbeit am eigenen Leben dazu.', quote: true },
+  { test: /werkzeug|werkzeuge|technik|technologie|mittel/i, theme: 'Werkzeuge erweitern Möglichkeiten', text: 'Kelly schaut auf Werkzeuge als Mittel, mit denen Menschen mehr wahrnehmen und gestalten können. Entscheidend bleibt, wofür du diese zusätzliche Fähigkeit einsetzt.' },
+  { test: /gruppe|menschen|beziehung|gespräch|helfen|hilfe|andere|teilen|beitrag|großzügig|person|freunde/i, theme: 'Wert entsteht miteinander', text: 'Ein wiederkehrender Gedanke bei Kelly ist die Kraft großzügiger Beziehungen. Nützlichkeit, Vertrauen und Austausch können mehr tragen als ein Vorhaben, das nur auf Reichweite zielt.' },
+  { test: /unverwechselbar|eigene interessen|eigenen interessen|eigenständ|talente|dein weg|nur du/i, theme: 'Den eigenen Weg formen', text: 'Kelly ermutigt dazu, nicht bloß in einer bestehenden Kategorie um den ersten Platz zu kämpfen. Deine besondere Mischung aus Erfahrung, Interessen und Können kann einen eigenen Weg eröffnen.' },
+  { test: /klein|experiment|version|anfang|beginne|start|ausprobieren|versuch|unfertig|perfekt|plan|warten|sicherheit|idee/i, theme: 'Klein anfangen, wirklich lernen', text: 'Ein kleiner Versuch macht aus einer Vermutung Erfahrung. Kellys praktische Art von Rat bevorzugt oft den machbaren Prototyp: Er zeigt, was funktioniert, und hilft beim nächsten Schritt.' },
+  { test: /lang|fortschritt|wiederhol|gewohnheit|verbesser|prozess|geduld|morgen|zukunft|garten|übung|übe|wachstum|üben/i, theme: 'Der lange Blick', text: 'Kelly ist für seinen langen Blick bekannt: Wiederholte kleine Verbesserungen können sich über Zeit aufbauen. Heute zählt deshalb auch der unspektakuläre Schritt, den du morgen wiederholen kannst.' },
+  { test: /frage|neugierig|neugier|hör zu|lernen|lerne|wissen|beobacht|entdeck|überrasch|ungewohnt/i, theme: 'Neugier hält Türen offen', text: 'Neugier ist bei Kelly kein Selbstzweck, sondern eine Methode, die Welt genauer zu sehen. Gute Fragen machen Platz für Informationen und Möglichkeiten, die ein fertiger Plan leicht übersieht.' },
+  { test: /aufmerksamkeit|weniger|einfach|genug|nein|ablenk|zeit|sorgfältig|aussort|kalender|wichtig/i, theme: 'Aufmerksamkeit bewusst einsetzen', text: 'Ein gutes Vorhaben braucht nicht nur Ideen, sondern auch Zeit und Aufmerksamkeit. Wenn du bewusst auswählst, was wichtig ist, bekommen deine Mittel eine klare Richtung.' },
+  { test: /mut|fehler|kritik|schwierig|zweifel|offen|risiko|rückschlag|optimistisch|optimismus|hoffnung/i, theme: 'Zuversicht mit den Füßen am Boden', text: 'Kellys Optimismus bedeutet nicht, Schwierigkeiten zu übersehen. Er richtet den Blick auf Möglichkeiten, die durch Handeln, Lernen und Zusammenarbeit tatsächlich wachsen können.' },
+  { test: /arbeit|machen|schaffen|vorhaben|können|fähigkeit|bewunder|nützlich|ziel|beruf|gestalten/i, theme: 'Machen bringt die Idee weiter', text: 'Kellys Ratschläge schätzen praktische Erfahrung: Wer etwas baut, schreibt, ausprobiert oder verbessert, bekommt Rückmeldung aus der Wirklichkeit. Daraus kann die nächste bessere Version entstehen.' }
+];
+
+function contextFor(text) {
+  return contextGuides.find((guide) => guide.test.test(text)) || {
+    theme: 'Ein Gedanke zum Mitnehmen',
+    text: 'Kellys kurze Lebensratschläge verbinden Alltag mit einem weiteren Blick auf das, was wir lernen, gestalten und mit anderen teilen. Nimm diesen Impuls als Einladung, ihn heute praktisch auszuprobieren.'
+  };
+}
+
+function setCardFlipped(flipped) {
+  flipCardInner.classList.toggle('is-flipped', flipped);
+  mantraFront.setAttribute('aria-hidden', String(flipped));
+  mantraBack.setAttribute('aria-hidden', String(!flipped));
+  mantraFront.inert = flipped;
+  mantraBack.inert = !flipped;
+  document.querySelector('#flip-button').setAttribute('aria-pressed', String(flipped));
+  document.querySelector('#flip-back-button').setAttribute('aria-pressed', String(!flipped));
+}
 
 function loadFavorites() {
   try { return JSON.parse(localStorage.getItem('heute-favorites') || '[]'); }
@@ -119,12 +154,18 @@ function loadFavorites() {
 }
 
 function renderMantra() {
-  mantraText.textContent = mantras[currentIndex];
+  const text = mantras[currentIndex];
+  mantraText.textContent = text;
+  const guide = contextFor(text);
+  contextText.textContent = guide.text;
+  document.querySelector('#context-heading').textContent = guide.theme;
+  bookQuote.hidden = !guide.quote;
   document.querySelector('#day-number').textContent = currentIndex === todaysIndex ? 'HEUTIGER IMPULS' : `IMPULS ${String(currentIndex + 1).padStart(2, '0')}`;
-  const saved = favorites.includes(mantras[currentIndex]);
+  const saved = favorites.includes(text);
   saveButton.setAttribute('aria-pressed', String(saved));
   saveButton.setAttribute('aria-label', saved ? 'Mantra aus Favoriten entfernen' : 'Mantra als Favorit speichern');
   saveLabel.textContent = saved ? 'Gemerkt' : 'Merken';
+  setCardFlipped(false);
 }
 
 function renderFavorites() {
@@ -157,6 +198,12 @@ function saveCurrentMantra() {
 
 document.querySelector('#today-label').textContent = new Intl.DateTimeFormat('de-CH', { weekday: 'long', day: 'numeric', month: 'long' }).format(today).toUpperCase();
 document.querySelector('#save-button').addEventListener('click', saveCurrentMantra);
+document.querySelector('#flip-button').addEventListener('click', () => setCardFlipped(true));
+document.querySelector('#flip-back-button').addEventListener('click', () => setCardFlipped(false));
+document.querySelector('#mantra-card').addEventListener('click', (event) => {
+  if (event.target.closest('button, a')) return;
+  setCardFlipped(!flipCardInner.classList.contains('is-flipped'));
+});
 document.querySelector('#another-button').addEventListener('click', () => {
   currentIndex = (currentIndex + 1 + Math.floor(Math.random() * (mantras.length - 1))) % mantras.length;
   if (currentIndex === todaysIndex) currentIndex = (currentIndex + 1) % mantras.length;
