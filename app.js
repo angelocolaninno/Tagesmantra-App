@@ -87,7 +87,17 @@ const mantras = [
   'Du musst nicht alles behalten, nur weil du einmal damit angefangen hast.',
   'Behandle einen schwierigen Tag als einen Tag, nicht als Urteil über dein Leben.',
   'Pflege deine Vorhaben so, wie du einen Garten pflegst: regelmäßig und mit Geduld.',
-  'Die beste nächste Idee kann aus dem entstehen, was du gerade beobachtest.'
+  'Die beste nächste Idee kann aus dem entstehen, was du gerade beobachtest.',
+  'Probiere die kleine Version deines Vorhabens aus, bevor du dein ganzes Leben umplanst.',
+  'Verbinde deine eigenen Interessen und Erfahrungen. Daraus kann ein Weg entstehen, den nur du gehen kannst.',
+  'Nutze Werkzeuge, die deine Fähigkeiten erweitern, und bleib neugierig auf das, was sie möglich machen.',
+  'Richte deine Arbeit an den Menschen aus, denen sie wirklich hilft.',
+  'Ein überschaubares Experiment zeigt oft mehr als langes Grübeln über den perfekten Plan.',
+  'Nimm den langen Blick ein: Kleine Verbesserungen können sich überraschend weit tragen.',
+  'Übe, bessere Fragen zu stellen. Sie machen neue Antworten überhaupt erst sichtbar.',
+  'Beginne mit den Mitteln, die du hast. Der nächste Schritt muss nicht die ganze Reise bezahlen.',
+  'Dein unverwechselbarer Weg kann aus einer ungewöhnlichen Mischung deiner Interessen entstehen.',
+  'Mach etwas Nützliches für eine kleine Gruppe, bevor du versuchst, allen zu gefallen.'
 ];
 
 const today = new Date();
