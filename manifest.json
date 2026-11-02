@@ -1,0 +1,12 @@
+{
+  "name": "Heute — Tagesmantra",
+  "short_name": "Heute",
+  "description": "Ein kurzer Gedanke für deinen heutigen Weg.",
+  "lang": "de-CH",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f0e8",
+  "theme_color": "#f4f0e8",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
