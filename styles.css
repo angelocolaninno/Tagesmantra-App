@@ -39,15 +39,14 @@ h1 { margin: 0; font: 500 clamp(43px, 11vw, 58px)/1.04 'Playfair Display', Georg
 h1 span { color: var(--green); }
 .intro-note { margin: 13px 0 0; color: var(--muted); font-size: 13px; }
 
-/* The mantra stays a calm, legible content surface beneath the glass controls. */
-.flip-card { min-height: 355px; perspective: 1400px; -webkit-perspective: 1400px; }
-.flip-card-inner { position: relative; min-height: inherit; display: grid; transform-style: preserve-3d; -webkit-transform-style: preserve-3d; -webkit-transition: -webkit-transform .72s cubic-bezier(.2,.75,.24,1); transition: transform .72s cubic-bezier(.2,.75,.24,1); }
-.flip-card-inner.is-flipped { -webkit-transform: rotateY(180deg); transform: rotateY(180deg); }
-.mantra-face { grid-area: 1 / 1; width: 100%; min-height: 355px; backface-visibility: hidden; -webkit-backface-visibility: hidden; }
-.mantra-front { -webkit-transform: rotateY(0deg); transform: rotateY(0deg); }
-.mantra-back { visibility: hidden; -webkit-transform: rotateY(180deg); transform: rotateY(180deg); background: radial-gradient(ellipse at 0% 100%, #4e715c 0, transparent 38%), linear-gradient(145deg, #2d5540, #203f32); }
-.flip-card-inner.is-flipped .mantra-front { visibility: hidden; }
-.flip-card-inner.is-flipped .mantra-back { visibility: visible; }
+/* Keep both faces in one layout slot, then swap them without 3D backface painting. */
+.flip-card { min-height: 355px; }
+.flip-card-inner { position: relative; min-height: inherit; display: grid; }
+.mantra-face { grid-area: 1 / 1; width: 100%; min-height: 355px; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(5px) scale(.992); transition: opacity .18s ease, transform .24s ease; }
+.mantra-front { z-index: 1; opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
+.mantra-back { background: radial-gradient(ellipse at 0% 100%, #4e715c 0, transparent 38%), linear-gradient(145deg, #2d5540, #203f32); }
+.flip-card-inner.is-flipped .mantra-front { opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-5px) scale(.992); }
+.flip-card-inner.is-flipped .mantra-back { z-index: 2; opacity: 1; visibility: visible; pointer-events: auto; transform: none; }
 .mantra-card { position: relative; overflow: hidden; min-height: 355px; border: 1px solid #ffffff38; border-radius: 29px; padding: 23px 23px 18px; background-color: #254b38; background-image: radial-gradient(ellipse at 100% 0%, #5e806b 0, transparent 36%), linear-gradient(145deg, #345d47 0%, #254b38 62%, #203f32 100%); color: #fffdf5; display: flex; flex-direction: column; box-shadow: 0 22px 48px #263f3429, inset 0 1px 0 #ffffff45; }
 .mantra-back { background-color: #203f32; background-image: radial-gradient(ellipse at 0% 100%, #4e715c 0, transparent 38%), linear-gradient(145deg, #2d5540, #203f32); }
 .mantra-card::before { position: absolute; top: -75px; right: -42px; width: 190px; height: 190px; border: 1px solid #ffffff14; border-radius: 50%; content: ''; box-shadow: 0 0 0 24px #ffffff08, 0 0 0 48px #ffffff06; pointer-events: none; }
