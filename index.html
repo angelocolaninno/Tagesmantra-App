@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#f4f0e8" />
+    <meta name="description" content="Ein kurzer Gedanke für deinen heutigen Weg." />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Heute" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="icon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Heute — dein Tagesmantra</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Heute Startseite">
+          <span class="brand-mark" aria-hidden="true">h.</span>
+          <span>HEUTE</span>
+        </a>
+        <button id="favorites-toggle" class="icon-button" type="button" aria-label="Favoriten anzeigen" aria-pressed="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3L3 9.6l6.3-.9L12 3Z" /></svg>
+          <span id="favorite-count" class="favorite-count">0</span>
+        </button>
+      </header>
+
+      <section class="intro" aria-labelledby="greeting">
+        <p id="today-label" class="eyebrow">DEIN GEDANKE FÜR HEUTE</p>
+        <h1 id="greeting">Guten Morgen,<br /><span>Angelo.</span></h1>
+        <p class="intro-note">Ein kleiner Gedanke. Ein neuer Blick.</p>
+      </section>
+
+      <section class="mantra-card" aria-live="polite" aria-labelledby="mantra-text">
+        <div class="card-topline">
+          <span class="day-chip"><span class="sun-dot" aria-hidden="true"></span><span id="day-number">IMPULS 01</span></span>
+          <span class="card-mark" aria-hidden="true">✳</span>
+        </div>
+        <p id="mantra-text" class="mantra-text"></p>
+        <div class="card-bottomline">
+          <span class="mantra-caption">DEIN TAGESMANTRA</span>
+          <button id="save-button" class="save-button" type="button" aria-label="Mantra als Favorit speichern" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3L3 9.6l6.3-.9L12 3Z" /></svg>
+            <span id="save-label">Merken</span>
+          </button>
+        </div>
+      </section>
+
+      <div class="actions">
+        <button id="share-button" class="primary-button" type="button">
+          <span>Mitnehmen</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M5 13v6h14v-6" /></svg>
+        </button>
+        <button id="another-button" class="text-button" type="button"><span>Anderen Gedanken lesen</span><span aria-hidden="true">↗</span></button>
+      </div>
+
+      <section id="favorites-panel" class="favorites-panel" hidden aria-labelledby="favorites-heading">
+        <div class="section-heading">
+          <div><p class="eyebrow">DEINE SAMMLUNG</p><h2 id="favorites-heading">Aufgehoben.</h2></div>
+          <button id="close-favorites" class="close-button" type="button" aria-label="Favoriten schließen">×</button>
+        </div>
+        <ul id="favorites-list" class="favorites-list"></ul>
+        <p id="empty-favorites" class="empty-note">Deine gemerkten Gedanken erscheinen hier.</p>
+      </section>
+
+      <footer class="footer">
+        <span>Ein guter Tag beginnt mit einem Gedanken.</span>
+        <a href="https://kk.org/books/excellent-advice-for-living" target="_blank" rel="noreferrer">Inspiriert von Kevin Kellys Ideen <span aria-hidden="true">↗</span></a>
+      </footer>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="app.js" defer></script>
+  </body>
+</html>
