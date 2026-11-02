@@ -34,18 +34,50 @@
         <p class="intro-note">Ein kleiner Gedanke. Ein neuer Blick.</p>
       </section>
 
-      <section class="mantra-card" aria-live="polite" aria-labelledby="mantra-text">
-        <div class="card-topline">
-          <span class="day-chip"><span class="sun-dot" aria-hidden="true"></span><span id="day-number">IMPULS 01</span></span>
-          <span class="card-mark" aria-hidden="true">✳</span>
-        </div>
-        <p id="mantra-text" class="mantra-text"></p>
-        <div class="card-bottomline">
-          <span class="mantra-caption">DEIN TAGESMANTRA</span>
-          <button id="save-button" class="save-button" type="button" aria-label="Mantra als Favorit speichern" aria-pressed="false">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3L3 9.6l6.3-.9L12 3Z" /></svg>
-            <span id="save-label">Merken</span>
-          </button>
+      <section id="mantra-card" class="flip-card" aria-live="polite">
+        <div id="flip-card-inner" class="flip-card-inner">
+          <article id="mantra-front" class="mantra-face mantra-card" aria-labelledby="mantra-text">
+            <div class="card-topline">
+              <span class="day-chip"><span class="sun-dot" aria-hidden="true"></span><span id="day-number">HEUTIGER IMPULS</span></span>
+              <span class="card-mark" aria-hidden="true">✳</span>
+            </div>
+            <p id="mantra-text" class="mantra-text"></p>
+            <div class="card-bottomline">
+              <span class="mantra-caption">DEIN TAGESMANTRA</span>
+              <div class="card-controls">
+                <button id="save-button" class="save-button" type="button" aria-label="Mantra als Favorit speichern" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.3.9-4.6 4.5 1.1 6.3-5.6-3-5.6 3 1.1-6.3L3 9.6l6.3-.9L12 3Z" /></svg>
+                  <span id="save-label">Merken</span>
+                </button>
+                <button id="flip-button" class="flip-button" type="button" aria-label="Karte umdrehen und mehr erfahren" aria-pressed="false">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5M5.6 9A7 7 0 0 1 18 6l2 2M4 16l2 2a7 7 0 0 0 12.4-3" /></svg>
+                  <span>Mehr</span>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article id="mantra-back" class="mantra-face mantra-card mantra-back" aria-labelledby="context-heading" aria-hidden="true">
+            <div class="card-topline">
+              <span class="day-chip"><span class="sun-dot" aria-hidden="true"></span><span>DER GEDANKE DAHINTER</span></span>
+              <span class="card-mark" aria-hidden="true">✳</span>
+            </div>
+            <div class="context-copy">
+              <h2 id="context-heading">Ein bisschen Kontext</h2>
+              <p id="mantra-context" class="mantra-context"></p>
+              <figure id="book-quote" class="book-quote" hidden>
+                <blockquote>“Taking a break is not a sign of weakness but a sign of strength.”</blockquote>
+                <figcaption>Kevin Kelly, <cite>Excellent Advice for Living</cite> · <a href="https://kk.org/cooltools/excellent-advice-chatpdf-2-minute-burnout-checkup/" target="_blank" rel="noreferrer">Quelle</a></figcaption>
+              </figure>
+            </div>
+            <div class="card-bottomline">
+              <span class="mantra-caption">EIGENER IMPULS · KELLY-MOTIV</span>
+              <button id="flip-back-button" class="flip-button" type="button" aria-label="Zurück zum Tagesmantra" aria-pressed="true">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7v5h5M20 17v-5h-5M18.4 9A7 7 0 0 0 6 6L4 8m16 8-2 2a7 7 0 0 1-12.4-3" /></svg>
+                <span>Zurück</span>
+              </button>
+            </div>
+          </article>
         </div>
       </section>
 
