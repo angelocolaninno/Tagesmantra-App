@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 13610)
+Total output lines: 477
+
 const mantras = [
   'Bleib neugierig. Gute Fragen öffnen Türen, die Antworten noch nicht sehen.',
   'Mach den nächsten kleinen Schritt. Klarheit kommt oft erst beim Gehen.',
@@ -157,6 +160,122 @@ const mantras = [
   'Tu heute etwas, für das dein zukünftiges Ich dir dankbar sein wird.'
 ];
 
+const translations = {
+  en: [
+    'Stay curious. Good questions open doors answers cannot yet see.', 'Take the next small step. Clarity often comes once you start moving.', 'Choose progress that compounds over success that merely shines.', 'Notice what you do often: slowly, it becomes your life.', 'Keep your plan light enough to make room for a good surprise.', 'If you want to learn something, start by trying it yourself.', 'Give your attention to what you want to grow.', 'One honest conversation can move more than ten perfect messages.', 'Leave room for detours. Some valuable things appear along the way.', 'You do not need to know everything. Stay open to learning.', 'Do things you would be glad to do again.', 'Care for relationships that make you more generous and brave.', 'Start smaller than your ambition asks, and stick with it longer.', 'Do not confuse being busy with making progress.', 'A good habit is a decision you no longer have to make.', 'Change your mind when new reality stands before you.', 'Protect time for the people and questions that matter to you.', 'Treat mistakes as clues. They show where to try next.', 'Learn to finish things well. That makes room for what comes next.', 'Do not wait for the perfect moment. Make this moment useful.', 'Less, done with attention, is often more.', 'Treat your future self as someone you would like to support.', 'What you practice today will be easier to reach tomorrow.', 'Let people surprise you before you put them in a box.', 'Share what you learn. Knowledge grows in value as it travels.', 'Courage can be quiet: sometimes it is simply trying once more.', 'Notice small improvements. They begin big changes.', 'Take a break before your body has to demand one.', 'Take the long view without missing today.', 'You may rethink along the way what a good life means to you.', 'If you feel stuck, first change the question you are asking.', 'Give an idea a small chance before judging it harshly.', 'Be a beginner without apologizing for it.', 'What matters does not have to be loud.', 'Do something today that makes tomorrow easier.', 'Let direction set your pace, not comparison.', 'Sometimes the kindest next step is a clear no.', 'Do not wait for certainty when a small experiment is possible.', 'You can pay attention without taking everything personally.', 'Good work often comes from many unremarkable repetitions.', 'Decide what is enough before more becomes a habit.', 'Listen to discover something, not only to reply.', 'A free afternoon can be more productive than a packed plan.', 'Keep what works and let the rest get lighter.', 'Take your enthusiasm seriously. It shows where your energy is.', 'Trust small evidence more than big promises.', 'A good beginning is allowed to look unfinished.', 'Make it easy for others to help you honestly.', 'If something matters, give it a place in your calendar.', 'Keep the first version simple enough to allow a second.', 'You do not need every option. You need one you will nurture.', 'Choose people around whom you do not have to make yourself smaller.', 'Ask more often: what is the simple, generous solution here?', 'Make time to notice the good while it is happening.', 'An honest start is worth more than a perfect excuse.', 'You can respect your limits and remain open.', 'If you admire something, find out what part you can practice yourself.', 'Make fewer promises and keep the ones you make.', 'Do not let urgency take curiosity away from you.', 'Life gets clearer when you regularly let go of what no longer fits.', 'Give helpful ideas a chance to prove themselves in daily life.', 'Try to be someone you would enjoy working with.', 'A small contribution may arrive at exactly the right time for someone.', 'Knowledge grows when you use it and share it.', 'Be patient with the process and specific about the next step.', 'Allow yourself to like something even when it proves no use.', 'Not every open door is yours. You may choose deliberately.', 'Build habits that carry you when motivation grows quiet.', 'A good life is often a collection of good ordinary days.', 'Receive criticism as information, then decide for yourself.', 'Let curiosity be bigger than your fear of the unfamiliar.', 'Handle your attention carefully. It is part of your time.', 'You may answer slowly when you want to think honestly first.', 'Begin where you have influence, even if it is a small place.', 'Celebrate more than the goal. Notice what you learned on the way.', 'Change gets easier when you build it into daily life.', 'Make room for people who surprise you with new thoughts.', 'A calm mind does not need an immediate answer to every question.', 'When in doubt, return to what you truly consider important.', 'Learn to accept help before you urgently need it.', 'Today is a good chance to do a little better than yesterday.', 'Value the tool that helps you, and remember what you use it for.', 'Some things get easier when you stop trying to do them alone.', 'Stay open to progress in a form you did not plan.', 'Less distraction makes more of what is here visible.', 'You do not have to keep everything just because you once began it.', 'Treat a hard day as one day, not a verdict on your life.', 'Tend your plans like a garden: regularly and with patience.', 'Your next good idea may grow from what you are noticing now.', 'Try a small version before rearranging your whole life.', 'Connect your interests and experiences. They may form a path only you can take.', 'Use tools that extend your abilities, and stay curious about what they make possible.', 'Shape your work around the people it truly helps.', 'A small experiment often teaches more than perfect-plan pondering.', 'Take the long view: small improvements can carry you surprisingly far.', 'Practice asking better questions. They make new answers visible.', 'Start with what you have. The next step need not fund the whole journey.', 'Your distinctive path may come from an unusual mix of interests.', 'Do something useful for a small group before trying to please everyone.',
+    'What you do every day shapes you more than what you only plan to do now and then.',
+    'Turn your values into clear family rules. Write them down so you can refer to them together.',
+    'Show people what you believe they can do. A high expectation can invite them to grow beyond what they thought possible.',
+    'Make important decisions with a clear head. Let strong feelings settle first.',
+    'When two paths seem equally good, choose one and see what it teaches you.',
+    'Judge a decision by how carefully you made it, not only by its outcome.',
+    'Gather enough information for the next step. You do not need to wait for complete certainty.',
+    'Waiting is a decision too. Choose consciously when you decide not to change anything for now.',
+    'Stay a beginner. If you still have questions, there is still something to discover.',
+    'Learn the principle behind a single case. Then you can use what you know elsewhere.',
+    'Read books that widen your view and test familiar assumptions.',
+    'Ask a better question before settling for the first answer.',
+    'Explain what you learned. You will notice what you really understand.',
+    'Work on something whose value can continue to grow over time.',
+    'Choose the people you want to build with before you commit to the project.',
+    'A good reputation grows slowly. Let your daily work confirm it.',
+    'Reliability makes it easier for others to do good work with you.',
+    'Nurture relationships that last even when quick gains do not.',
+    'Develop many ideas. One strong idea can emerge from several attempts.',
+    'Your first draft can be unfinished. Make it concrete enough to learn from.',
+    'Start working. Inspiration often meets you along the way.',
+    'Learn by imitation, then develop your own voice step by step.',
+    'Stay curious. It can take you further than talent alone.',
+    'Your attention gives your time direction. Choose carefully where it goes.',
+    'Make room in your calendar to think before every free moment is filled.',
+    'Every yes takes time you could use for something else.',
+    'A small habit, repeated, can change your daily life over time.',
+    'What feels urgent today does not automatically deserve all your focus.',
+    'Listen a little longer before preparing your reply.',
+    'People often remember how they felt around you.',
+    'Generosity can open possibilities that competition keeps closed.',
+    'Friendships grow through small gestures and reliable time together.',
+    'Apologize sincerely when you hurt someone, without hiding behind explanations.',
+    'Buy things that give you time or quality of life for the long term.',
+    'Give small savings time to grow. Starting early can make a difference over time.',
+    'Invest in skills you can use in many situations.',
+    'Money is useful when it gives you more freedom to choose how you live.',
+    'Consider whether consumer debt will unnecessarily limit your future options.',
+    'Persistence gives good ideas time to make a difference in the world.',
+    'Build habits that carry you on days when motivation is quiet.',
+    'Create more opportunities by trying things, making your work visible, and meeting people.',
+    'Improve one detail at a time. Progress can build over time.',
+    'Think in years when you want to create something that lasts beyond quick success.',
+    'Make rest a steady part of your rhythm.',
+    'Find a kind of movement you enjoy and can include regularly in your day.',
+    'Notice what your body is telling you and take a break in good time.',
+    'A small routine that fits you often lasts longer than an extreme program.',
+    'Be kind even when no one is watching.',
+    'Admit mistakes openly. Honesty helps you learn from them sooner.',
+    'Stay curious even where you already feel certain.',
+    'Look for what is true instead of trying to get the last word in an argument.',
+    'Keep your word, especially when it is inconvenient.',
+    'Try small changes. New experiences make life more interesting.',
+    'Collect experiences and stories, not only things.',
+    'Plan for uncertainty instead of waiting for certainty.',
+    'Try to get closer to the truth instead of defending your first opinion.',
+    'Do something today your future self will thank you for.'
+  ],
+  it: [
+    'Resta curioso. Le buone domande aprono porte che le risposte ancora non vedono.', 'Fai il prossimo piccolo passo. Spesso la chiarezza arriva camminando.', 'Scegli progressi che si accumulano, non successi che brillano soltanto.', 'Nota ciò che fai spesso: piano piano diventa la tua vita.', 'Tieni il piano abbastanza leggero da lasciare spazio a una bella sorpresa.', 'Se vuoi imparare qualcosa, inizia a provarci da solo.', 'Dedica attenzione a ciò che vuoi far crescere.', 'Una conversazione sincera può fare più di dieci messaggi perfetti.', 'Lascia spazio alle deviazioni. Alcune cose preziose appaiono lungo il cammino.', 'Non devi sapere tutto. Resta aperto a imparare.', 'Fai cose che ti farà piacere ripetere.', 'Coltiva i rapporti che ti rendono più generoso e coraggioso.', 'Inizia più in piccolo di quanto chieda la tua ambizione e continua più a lungo.', 'Non confondere l’essere occupato con l’avanzare.', 'Una buona abitudine è una decisione che non devi più prendere.', 'Cambia idea quando la nuova realtà ti si presenta davanti.', 'Proteggi il tempo per le persone e le domande che contano.', 'Considera gli errori come indizi: mostrano dove tentare ancora.', 'Impara a concludere bene. Così fai spazio a ciò che verrà.', 'Non aspettare il momento perfetto. Rendi utile questo momento.', 'Meno, fatto con attenzione, spesso è di più.', 'Tratta il tuo futuro come qualcuno che vuoi sostenere.', …1610 tokens truncated… reputazione cresce lentamente. Confermala con il tuo lavoro quotidiano.',
+    'Essere affidabile rende più facile agli altri fare un buon lavoro con te.',
+    'Coltiva rapporti che restano preziosi anche quando il guadagno immediato svanisce.',
+    'Sviluppa molte idee. Da più tentativi può emergere quella giusta.',
+    'La prima bozza può essere incompleta. Rendila abbastanza concreta da impararci qualcosa.',
+    'Inizia a lavorare. Spesso trovi ispirazione mentre sei in cammino.',
+    'Impara imitando, poi sviluppa passo dopo passo la tua voce.',
+    'Resta curioso. Può portarti più lontano del solo talento.',
+    'La tua attenzione dà una direzione al tempo. Scegli con cura dove rivolgerla.',
+    'Fai spazio nel calendario per pensare, prima di riempire ogni momento libero.',
+    'Ogni sì occupa tempo che potresti dedicare ad altro.',
+    'Una piccola abitudine, ripetuta, può cambiare la vita quotidiana nel tempo.',
+    'Ciò che oggi sembra urgente non merita automaticamente tutta la tua attenzione.',
+    'Ascolta ancora un momento prima di preparare la risposta.',
+    'Le persone ricordano spesso come si sono sentite in tua compagnia.',
+    'La generosità può aprire possibilità che la competizione tiene chiuse.',
+    'Le amicizie crescono con piccoli gesti e tempo condiviso con costanza.',
+    'Chiedi scusa con sincerità se ferisci qualcuno, senza nasconderti dietro le spiegazioni.',
+    'Compra cose che ti restituiscono tempo o qualità di vita nel lungo periodo.',
+    'Dai tempo ai piccoli risparmi per crescere. Iniziare presto può fare la differenza.',
+    'Investi in capacità che puoi usare in molte situazioni.',
+    'Il denaro è utile quando ti offre più libertà di scelta nella vita.',
+    'Chiediti se un debito per i consumi limiterà inutilmente le tue possibilità future.',
+    'La perseveranza dà alle buone idee il tempo di incidere sul mondo.',
+    'Costruisci abitudini che ti sostengano nei giorni in cui la motivazione è bassa.',
+    'Crea più occasioni provando, mostrando il tuo lavoro e incontrando persone.',
+    'Migliora un dettaglio alla volta. Il progresso può accumularsi nel tempo.',
+    'Ragiona in anni quando vuoi creare qualcosa che duri più di un successo rapido.',
+    'Fai del riposo una parte costante del tuo ritmo.',
+    'Trova un movimento che ti piace e che puoi inserire regolarmente nella giornata.',
+    'Nota ciò che ti comunica il corpo e concediti una pausa per tempo.',
+    'Una piccola routine adatta a te spesso dura più di un programma estremo.',
+    'Sii gentile anche quando nessuno ti guarda.',
+    'Ammetti apertamente gli errori. La sincerità ti aiuta a imparare prima.',
+    'Resta curioso anche su ciò di cui ti senti già sicuro.',
+    'Cerca ciò che è vero, invece di cercare di vincere una discussione.',
+    'Mantieni la parola, soprattutto quando è scomodo.',
+    'Prova piccoli cambiamenti. Le nuove esperienze rendono la vita più interessante.',
+    'Raccogli esperienze e storie, non soltanto oggetti.',
+    'Pianifica anche per i momenti incerti, invece di aspettare certezze.',
+    'Prova ad avvicinarti alla verità, invece di difendere la prima opinione.',
+    'Fai oggi qualcosa per cui il tuo io futuro ti sarà grato.'
+  ]
+};
+
+const interfaceText = {
+  de: { lang: 'de', today: 'DEIN GEDANKE FÜR HEUTE', morning: 'Guten Morgen,', note: 'Ein kleiner Gedanke. Ein neuer Blick.', current: 'HEUTIGER IMPULS', impulse: 'IMPULS', caption: 'DEIN TAGESMANTRA', save: 'Merken', saveAria: 'Mantra als Favorit speichern', removeAria: 'Mantra aus Favoriten entfernen', saved: 'Gemerkt', more: 'Mehr', back: 'Zurück', behind: 'DER GEDANKE DAHINTER', context: 'Ein bisschen Kontext', quote: 'Quelle', share: 'Mitnehmen', another: 'Anderen Gedanken lesen', collection: 'DEINE SAMMLUNG', heading: 'Aufgehoben.', empty: 'Deine gemerkten Gedanken erscheinen hier.', footer: 'Ein guter Tag beginnt mit einem Gedanken.', source: 'Eigene Impulse nach Motiven aus Kevin Kellys „Excellent Advice for Living“', savedToast: 'Für später aufgehoben.', removedToast: 'Aus den Favoriten entfernt.', copied: 'Gedanke kopiert.' },
+  en: { lang: 'en', title: 'Today — your daily thought', description: 'A short thought for your day.', today: 'YOUR THOUGHT FOR TODAY', morning: 'Good morning,', note: 'A small thought. A fresh perspective.', current: 'TODAY’S THOUGHT', impulse: 'THOUGHT', caption: 'YOUR DAILY MANTRA', save: 'Save', saveAria: 'Save mantra to favorites', removeAria: 'Remove mantra from favorites', saved: 'Saved', more: 'More', back: 'Back', behind: 'THE THOUGHT BEHIND IT', context: 'A little context', quote: 'Source', share: 'Take it with you', another: 'Read another thought', collection: 'YOUR COLLECTION', heading: 'Saved for later.', empty: 'Your saved thoughts will appear here.', footer: 'A good day begins with a thought.', source: 'Original thoughts inspired by Kevin Kelly’s “Excellent Advice for Living”', savedToast: 'Saved for later.', removedToast: 'Removed from favorites.', copied: 'Thought copied.' },
+  it: { lang: 'it', title: 'Oggi — il tuo pensiero quotidiano', description: 'Un breve pensiero per la tua giornata.', today: 'IL TUO PENSIERO DI OGGI', morning: 'Buongiorno,', note: 'Un piccolo pensiero. Uno sguardo nuovo.', current: 'PENSIERO DI OGGI', impulse: 'PENSIERO', caption: 'IL TUO MANTRA QUOTIDIANO', save: 'Salva', saveAria: 'Salva il mantra tra i preferiti', removeAria: 'Rimuovi il mantra dai preferiti', saved: 'Salvato', more: 'Scopri', back: 'Indietro', behind: 'IL PENSIERO DIETRO', context: 'Un po’ di contesto', quote: 'Fonte', share: 'Porta con te', another: 'Leggi un altro pensiero', collection: 'LA TUA RACCOLTA', heading: 'Da ricordare.', empty: 'Qui appariranno i pensieri salvati.', footer: 'Una bella giornata inizia con un pensiero.', source: 'Pensieri originali ispirati a “Excellent Advice for Living” di Kevin Kelly', savedToast: 'Salvato per dopo.', removedToast: 'Rimosso dai preferiti.', copied: 'Pensiero copiato.' }
+};
+
+const storedLanguage = localStorage.getItem('heute-language');
+let language = ['de', 'en', 'it'].includes(storedLanguage) ? storedLanguage : 'de';
+
 const today = new Date();
 const dayIndex = Math.floor((Date.UTC(today.getFullYear(), today.getMonth(), today.getDate()) - Date.UTC(2024, 0, 1)) / 86400000);
 const todaysIndex = ((dayIndex % mantras.length) + mantras.length) % mantras.length;
@@ -226,20 +345,23 @@ function loadFavorites() {
 
 function renderMantra() {
   const text = mantras[currentIndex];
-  mantraText.textContent = text;
-  const guide = contextFor(text);
-  contextText.textContent = guide.text;
-  document.querySelector('#context-heading').textContent = guide.theme;
-  bookQuote.hidden = !guide.quote;
-  if (guide.quote) {
+  const ui = interfaceText[language];
+  const displayText = language === 'de' ? text : translations[language][currentIndex];
+  mantraText.textContent = displayText;
+  const guide = language === 'de' ? contextFor(text) : null;
+  document.querySelector('#context-heading').textContent = guide?.theme || ({ en: 'A thought to carry with you', it: 'Un pensiero da portare con te' })[language];
+  contextText.textContent = guide?.text || ({ en: 'A short reflection can turn an idea into something practical. Take this thought into your day and see where it leads.', it: 'Una breve riflessione può trasformare un’idea in qualcosa di concreto. Porta questo pensiero nella tua giornata e scopri dove ti conduce.' })[language];
+  bookQuote.hidden = !guide?.quote;
+  if (guide?.quote) {
     bookQuote.querySelector('blockquote').textContent = `“${guide.quote.text}”`;
     bookQuote.querySelector('figcaption a').href = guide.quote.source;
+    bookQuote.querySelector('figcaption a').textContent = ui.quote;
   }
-  document.querySelector('#day-number').textContent = currentIndex === todaysIndex ? 'HEUTIGER IMPULS' : `IMPULS ${String(currentIndex + 1).padStart(2, '0')}`;
+  document.querySelector('#day-number').textContent = currentIndex === todaysIndex ? ui.current : `${ui.impulse} ${String(currentIndex + 1).padStart(2, '0')}`;
   const saved = favorites.includes(text);
   saveButton.setAttribute('aria-pressed', String(saved));
-  saveButton.setAttribute('aria-label', saved ? 'Mantra aus Favoriten entfernen' : 'Mantra als Favorit speichern');
-  saveLabel.textContent = saved ? 'Gemerkt' : 'Merken';
+  saveButton.setAttribute('aria-label', saved ? ui.removeAria : ui.saveAria);
+  saveLabel.textContent = saved ? ui.saved : ui.save;
   setCardFlipped(false);
 }
 
@@ -248,7 +370,8 @@ function renderFavorites() {
   const list = document.querySelector('#favorites-list');
   list.replaceChildren(...favorites.map((text) => {
     const item = document.createElement('li');
-    item.textContent = text;
+    const index = mantras.indexOf(text);
+    item.textContent = index < 0 || language === 'de' ? text : translations[language][index];
     return item;
   }));
   document.querySelector('#empty-favorites').hidden = favorites.length > 0;
@@ -268,10 +391,42 @@ function saveCurrentMantra() {
   localStorage.setItem('heute-favorites', JSON.stringify(favorites));
   renderMantra();
   renderFavorites();
-  showToast(favorites.includes(text) ? 'Für später aufgehoben.' : 'Aus den Favoriten entfernt.');
+  showToast(favorites.includes(text) ? interfaceText[language].savedToast : interfaceText[language].removedToast);
 }
 
-document.querySelector('#today-label').textContent = new Intl.DateTimeFormat('de-CH', { weekday: 'long', day: 'numeric', month: 'long' }).format(today).toUpperCase();
+function renderLanguage() {
+  const ui = interfaceText[language];
+  document.documentElement.lang = ui.lang;
+  document.title = ui.title || 'Heute — dein Tagesmantra';
+  document.querySelector('meta[name="description"]').content = ui.description || 'Ein kurzer Gedanke für deinen heutigen Weg.';
+  document.querySelector('#language-select').value = language;
+  document.querySelector('#language-label').textContent = ({ de: 'Sprache wählen', en: 'Choose language', it: 'Scegli la lingua' })[language];
+  document.querySelector('#today-label').textContent = `${ui.today} · ${new Intl.DateTimeFormat(language === 'de' ? 'de-CH' : language, { weekday: 'long', day: 'numeric', month: 'long' }).format(today).toUpperCase()}`;
+  document.querySelector('#greeting').innerHTML = `${ui.morning}<br /><span>Angelo.</span>`;
+  document.querySelector('.intro-note').textContent = ui.note;
+  document.querySelector('#mantra-front .day-chip').lastElementChild.textContent = ui.current;
+  document.querySelector('#mantra-front .mantra-caption').textContent = ui.caption;
+  document.querySelector('#flip-button span').textContent = ui.more;
+  document.querySelector('#mantra-back .day-chip').lastElementChild.textContent = ui.behind;
+  document.querySelector('#flip-back-button span').textContent = ui.back;
+  document.querySelector('#share-button span').textContent = ui.share;
+  document.querySelector('#another-button span:first-child').textContent = ui.another;
+  document.querySelector('#favorites-panel .eyebrow').textContent = ui.collection;
+  document.querySelector('#favorites-heading').textContent = ui.heading;
+  document.querySelector('#empty-favorites').textContent = ui.empty;
+  document.querySelector('.footer > span').textContent = ui.footer;
+  document.querySelector('.footer a').firstChild.textContent = ui.source + ' ';
+  document.querySelector('#favorites-toggle').setAttribute('aria-label', ({ de: 'Favoriten anzeigen', en: 'Show favorites', it: 'Mostra i preferiti' })[language]);
+  document.querySelector('#close-favorites').setAttribute('aria-label', ({ de: 'Favoriten schließen', en: 'Close favorites', it: 'Chiudi i preferiti' })[language]);
+  renderMantra();
+  renderFavorites();
+}
+
+document.querySelector('#language-select').addEventListener('change', (event) => {
+  language = event.currentTarget.value;
+  localStorage.setItem('heute-language', language);
+  renderLanguage();
+});
 document.querySelector('#save-button').addEventListener('click', saveCurrentMantra);
 document.querySelector('#flip-button').addEventListener('click', () => setCardFlipped(true));
 document.querySelector('#flip-back-button').addEventListener('click', () => setCardFlipped(false));
@@ -295,14 +450,15 @@ document.querySelector('#close-favorites').addEventListener('click', () => {
   document.querySelector('#favorites-toggle').setAttribute('aria-pressed', 'false');
 });
 document.querySelector('#share-button').addEventListener('click', async () => {
-  const shareData = { title: 'Mein Tagesmantra', text: `„${mantras[currentIndex]}“\n\n— Mein Gedanke für heute` };
+  const ui = interfaceText[language];
+  const quote = language === 'de' ? mantras[currentIndex] : translations[language][currentIndex];
+  const shareData = { title: ui.caption, text: `“${quote}”\n\n— ${ui.today}` };
   try {
     if (navigator.share) await navigator.share(shareData);
-    else if (navigator.clipboard) { await navigator.clipboard.writeText(shareData.text); showToast('Gedanke kopiert.'); }
-    else showToast('Teilen ist auf diesem Gerät nicht verfügbar.');
-  } catch (error) { if (error.name !== 'AbortError') showToast('Teilen ist gerade nicht möglich.'); }
+    else if (navigator.clipboard) { await navigator.clipboard.writeText(shareData.text); showToast(ui.copied); }
+    else showToast(({ de: 'Teilen ist auf diesem Gerät nicht verfügbar.', en: 'Sharing is not available on this device.', it: 'La condivisione non è disponibile su questo dispositivo.' })[language]);
+  } catch (error) { if (error.name !== 'AbortError') showToast(({ de: 'Teilen ist gerade nicht möglich.', en: 'Sharing is unavailable right now.', it: 'La condivisione non è disponibile al momento.' })[language]); }
 });
 
-renderMantra();
-renderFavorites();
+renderLanguage();
 if ('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('./sw.js').catch(() => {});

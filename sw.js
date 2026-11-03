@@ -1,4 +1,4 @@
-const CACHE_NAME = 'heute-v6';
+const CACHE_NAME = 'heute-v7';
 const APP_FILES = ['./', './index.html', './styles.css', './app.js', './manifest.json', './icon.svg'];
 
 self.addEventListener('install', (event) => {
